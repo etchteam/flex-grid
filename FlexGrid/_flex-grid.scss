@@ -78,7 +78,7 @@ $bp: (
 
   &__item {
     flex: 0 0 auto;
-    min-width: 0;
+    min-width: 0; // Fixes a bug not letting the child shrink the content
     padding: $grid-gutter-width / 2;
 
     &--grow {
