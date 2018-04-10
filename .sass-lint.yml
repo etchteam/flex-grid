@@ -1,0 +1,19 @@
+files:
+  include: '**/*.s+(a|c)ss'
+options:
+  formatter: stylish
+  merge-default-rules: true
+rules:
+  class-name-format:
+    - 1
+    - convention: hyphenatedbem
+  id-name-format:
+    - 1
+    - convention: hyphenatedbem
+  nesting-depth:
+    - 1
+    - max-depth: 4
+  placeholder-name-format:
+    - 1
+    - convention: hyphenatedbem
+  property-sort-order: 1
