@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-function Item({ children, grow, shrink, align, xs, sm, md, lg, flex, className, ...props }) {
+function Item({
+  children, grow, shrink, align, xs, sm, md, lg, flex, className, ...props
+}) {
   const cx = classNames({
     'flex-grid__item': true,
     'flex-grid__item--grow': grow,
@@ -28,7 +30,7 @@ Item.propTypes = {
   grow: PropTypes.bool,
   shrink: PropTypes.bool,
   flex: PropTypes.bool,
-  align: PropTypes.string,
+  align: PropTypes.oneOf(['flex-start', 'flex-end', 'center', 'baseline', 'stretch', '']),
   xs: PropTypes.number,
   sm: PropTypes.number,
   md: PropTypes.number,
@@ -49,7 +51,9 @@ Item.defaultProps = {
   className: '',
 };
 
-function Grid({ children, direction, align, justify, wrap, className, ...props }) {
+function Grid({
+  children, direction, align, justify, wrap, className, ...props
+}) {
   const cx = classNames({
     'flex-grid': true,
     [`flex-grid--${direction}`]: direction !== '',
@@ -68,16 +72,16 @@ function Grid({ children, direction, align, justify, wrap, className, ...props }
 
 Grid.propTypes = {
   children: PropTypes.node,
-  align: PropTypes.string,
+  align: PropTypes.oneOf(['flex-start', 'flex-end', 'center', 'baseline', 'stretch', '']),
   wrap: PropTypes.bool,
-  direction: PropTypes.string,
-  justify: PropTypes.string,
+  direction: PropTypes.oneOf(['row', 'row-reverse', 'column', 'column-reverse', '']),
+  justify: PropTypes.oneOf(['flex-start', 'flex-end', 'center', 'space-between', 'space-around', '']),
   className: PropTypes.string,
 };
 
 Grid.defaultProps = {
   children: '',
-  align: '',
+  align: 'stretch',
   justify: '',
   wrap: false,
   direction: '',
