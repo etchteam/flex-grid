@@ -1,3 +1,11 @@
+$grid-gutter-width: 1em !default;
+$bp: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px
+) !default;
+
 .flex-grid {
   display: flex;
   margin: (-$grid-gutter-width / 2);
